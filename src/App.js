@@ -18,17 +18,17 @@ export default function App() {
     const [categories, setCategories] = React.useState(null);
 
     React.useEffect(()=>{
-        const firstPromisse = axios.get("http://localhost:4000/disciplines");
+        const firstPromisse = axios.get("https://infoprovas.herokuapp.com/disciplines");
         firstPromisse.then((answer)=>{
             console.log(answer.data);
             setPeriods(answer.data);
         }).catch(answer=>console.log(answer.response));
-        const secondPromisse = axios.get("http://localhost:4000/professors");
+        const secondPromisse = axios.get("https://infoprovas.herokuapp.com/professors");
         secondPromisse.then((answer)=>{
             console.log(answer.data);
             setProfessors(answer.data);
         }).catch(answer=>console.log(answer.response));
-        const thirdPromisse = axios.get("http://localhost:4000/categories");
+        const thirdPromisse = axios.get("https://infoprovas.herokuapp.com/categories");
         thirdPromisse.then((answer)=>{
             console.log(answer.data);
             setCategories(answer.data);

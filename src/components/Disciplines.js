@@ -11,7 +11,7 @@ export default function Disciplines() {
 
     function getExams(id){
         console.log(id)
-        const promisse = axios.get(`http://localhost:4000/disciplines/${id}/exams`);
+        const promisse = axios.get(`https://infoprovas.herokuapp.com/disciplines/${id}/exams`);
         promisse.then((answer)=>{
             console.log(answer.data);
             setExams(answer.data);

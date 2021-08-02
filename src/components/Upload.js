@@ -27,7 +27,7 @@ export default function Upload() {
             professor: choosenProfessor,
             url: url
         }
-        axios.post("http://localhost:4000/exams",body).then((answer)=>console.log(answer.data)).catch((answer)=>console.log(answer.response));
+        axios.post("https://infoprovas.herokuapp.com/exams",body).then((answer)=>console.log(answer.data)).catch((answer)=>console.log(answer.response));
     }
 
     return(
