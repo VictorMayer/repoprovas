@@ -27,7 +27,16 @@ export default function Upload() {
             professor: choosenProfessor,
             url: url
         }
-        axios.post("https://infoprovas.herokuapp.com/exams",body).then((answer)=>console.log(answer.data)).catch((answer)=>console.log(answer.response));
+        axios.post("https://infoprovas.herokuapp.com/exams",body).then((answer)=>{
+            console.log(answer.data)
+            setName("");
+            setUrl("");
+            setChoosenCategory(0);
+            setChoosenDiscipline(0);
+            setChoosenProfessor(0);
+            alert("Prova Adicionada");
+            history.push("/");
+        }).catch((answer)=>console.log(answer.response));
     }
 
     return(
